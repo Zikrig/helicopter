@@ -136,7 +136,13 @@ async def process_extra_done(callback: types.CallbackQuery, state: FSMContext):
 @router.message(SurveyStates.phone)
 @router.message(F.contact)
 async def process_phone(message: types.Message, state: FSMContext):
-    phone = message.contact.phone_number if message.contact else message.text
+    if message.contact:
+        phone = message.contact.phone_number
+    else:
+        phone = message.text
+        if phone == "Не хочу":
+            phone = "Не указан (отказ)"
+    
     await state.update_data(phone=phone)
     
     data = await state.get_data()

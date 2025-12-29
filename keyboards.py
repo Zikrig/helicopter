@@ -48,6 +48,7 @@ def get_extra_kb(selected_services=None):
 
 def get_phone_kb():
     buttons = [
-        [KeyboardButton(text="Отправить номер телефона 📞", request_contact=True)]
+        [KeyboardButton(text="Отправить номер телефона 📞", request_contact=True)],
+        [KeyboardButton(text="Не хочу")]
     ]
     return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True, one_time_keyboard=True)
