@@ -9,7 +9,7 @@ from config import config
 from handlers import router
 
 # Logging setup
-logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+logging.basicConfig(level=logging.ERROR, stream=sys.stdout)
 
 # Bot and Dispatcher initialization
 bot = Bot(token=config.BOT_TOKEN)

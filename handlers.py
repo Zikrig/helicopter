@@ -203,4 +203,5 @@ async def process_phone(message: types.Message, state: FSMContext):
         final_msg = "Спасибо за обращение. Мы сделаем расчет на Ваш трансфер и отправим в ближайшее время."
 
     await message.answer(final_msg, parse_mode="HTML", reply_markup=types.ReplyKeyboardRemove())
+    await message.answer("Спасибо за заполнение заявки! Мы свяжемся с вами как можно скорее.")
     await state.clear()
